@@ -3,6 +3,7 @@ from django.views.generic import TemplateView
 
 class IndexClass(TemplateView):
   template_name = "index.html"
+  blogs = Blog.objects.all()
 
 class NewClass(TemplateView):
   template_name = "new.html"
