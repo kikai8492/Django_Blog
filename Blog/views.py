@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.views.generic import TemplateView
 from .models import Blog
+from .forms import BlogForm
 
 class IndexClass(TemplateView):
   template_name = "index.html"
@@ -8,6 +9,9 @@ class IndexClass(TemplateView):
 
 class NewClass(TemplateView):
   template_name = "new.html"
-
-class ShowClass(TemplateView):
+  my_dict ={
+  form : BlogForm()
+  }
+  
+class ShowClass(TemplateView): 
   template_name = "show.html"
