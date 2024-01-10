@@ -2,16 +2,17 @@ from django.http import HttpResponse
 from django.views.generic import TemplateView
 from .models import Blog
 from .forms import BlogForm
+from django.shortcuts import render
 
-class IndexClass(TemplateView):
+class Index(TemplateView):
   template_name = "index.html"
   blogs = Blog.objects.all()
 
-class NewClass(TemplateView):
+def new(request):
   template_name = "new.html"
-  my_dict ={
-  form : BlogForm()
-  }
-  
-class ShowClass(TemplateView): 
+  form = BlogForm
+  context = {'form': form}
+  return render(request, 'index.html', context)
+
+class Show(TemplateView): 
   template_name = "show.html"

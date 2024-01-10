@@ -6,10 +6,10 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>コンタクトフォーム</h1>
-    <form action="{% url 'new' %}" method="post">
-      {% csrf_token %} {{ form }}
-      <input type="submit" value="送信" />
+    <h2>ブログ作成</h2>
+    <form class="" action="" method="post" enctype="multipart/form-data">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit" name="submit">Submit</button>
     </form>
   </body>
 </html>
